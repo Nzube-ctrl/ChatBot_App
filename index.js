@@ -109,6 +109,10 @@ io.on("connection", (socket) => {
   });
 });
 
+app.all("*", (req, res) => {
+  res.status(404).json({ message: "Page Not Found " });
+});
+
 server.listen(4000, () => {
   console.log(`Server is running on http://localhost:4000`);
 });
